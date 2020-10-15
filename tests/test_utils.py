@@ -28,10 +28,10 @@ class TestExceptions(unittest.TestCase):
         assert res[0] == 'gsettings'
 
 
-def test_get_screen_size():
-    screen = utils.get_screen_size()
-    assert screen['height']
-    assert screen['width']
+# def test_get_screen_size():
+#     screen = utils.get_screen_size()
+#     assert screen['height']
+#     assert screen['width']
 
 def test_get_keys():
     with patch('builtins.open', new_callable=MockOpen) as open_mock:
@@ -47,12 +47,12 @@ def test_get_keys():
         assert keys['secret_key'] =='sk'
 
 
-@patch('backgroundchanger.utils.subprocess.Popen')
-def test_reload_gala(mock_popen):
-    utils.reload_gala()
-    mock_popen.assert_called_once_with(['gala', '-r'],
-        stderr=subprocess.DEVNULL,
-        stdout=subprocess.DEVNULL)
+# @patch('backgroundchanger.utils.subprocess.Popen')
+# def test_reload_gala(mock_popen):
+#     utils.reload_gala()
+#     mock_popen.assert_called_once_with(['gala', '-r'],
+#         stderr=subprocess.DEVNULL,
+#         stdout=subprocess.DEVNULL)
 
 
 def test_copy_file():
@@ -77,9 +77,9 @@ def test_get_background_cmd():
     t.test_linux_cmd()
 
 
-@patch('backgroundchanger.utils.subprocess.call')
-def test_change_background(mock_call):
-    utils.get_background_cmd = MagicMock()
-    utils.get_background_cmd.return_value = ['dummy','cmd']
-    utils.change_background("./tests/test.png")
-    mock_call.assert_called_once_with(['dummy', 'cmd'])
+# @patch('backgroundchanger.utils.subprocess.call')
+# def test_change_background(mock_call):
+#     utils.get_background_cmd = MagicMock()
+#     utils.get_background_cmd.return_value = ['dummy','cmd']
+#     utils.change_background("./tests/test.png")
+#     mock_call.assert_called_once_with(['dummy', 'cmd'])
