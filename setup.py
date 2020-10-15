@@ -7,7 +7,7 @@ with open('README.md', 'r') as ld:
     long_desc = ld.read()
 
 setuptools.setup(
-        name='backgroundchanger',
+        name='backgroundchangerr',
         version=config.VERSION,
         author=config.AUTHOR,
         author_email=config.EMAIL,
